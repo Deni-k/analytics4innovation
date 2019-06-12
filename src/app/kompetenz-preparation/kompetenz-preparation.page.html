@@ -1,0 +1,156 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>KompetenzPreparation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="2">
+        <div class="Img1">
+          <img src="../assets/Pictures/Picture9.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bereich</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          <b>Fragestellung</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bewertung</b>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Technik / IT
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Besteht Kenntnis über mögliche Darstellungsformen von Analyseergebnissen?
+          [ 0 ~ geringe Kenntnis, 2 ~ Visualisierung mittels Excel (Diagramme), 4 ~ Visualisierung in Software integriert, abgestimmt auf die eingesetzten Methoden]
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[0]" (click)="rate(num, 0)" [ngStyle]="{'color':getColor(0, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Kompetenzen
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Können Ungenauigkeiten in der Datenqualität und das Fehlen relevanter Daten mit Bezug zur ursprünglichen Problemstellung identifiziert werden? (Abschließendes Datenqualitätsmanagement)
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[1]" (click)="rate(num, 1)" [ngStyle]="{'color':getColor(1, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Kann sichergestellt werden, das der Weg von den Datenquellen bis zur Gewinnung von Evidenzen und Einbeziehung im SEZ, umfangreich offengelegt werden kann? (Vermeidung von Redundanzen, aber auch Analyse von Fehlerquellen)
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[2]" (click)="rate(num, 2)" [ngStyle]="{'color':getColor(2, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Wird eine kritische iterative Beurteilung der erzielten Ergebnisse vorgenommen?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[3]" (click)="rate(num, 3)" [ngStyle]="{'color':getColor(3, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="2">
+        <div class="Img1">
+          <img src="../assets/Pictures/Picture10.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="9" class="cell1">
+        <ion-row class="row1">
+          <b>Fragestellung</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bewertung</b>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="9" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Besteht ausführliche Kenntnis bezüglich der Verwendung von personenbezogenen Daten (Compliance, DSGVO)?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[4]" (click)="rate(num, 4)" [ngStyle]="{'color':getColor(4, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="9" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Erfolgt eine Datenschutzrechtliche Betrachtung entlang des Datenanalyseprozesses (von der Datenerzeugung bis zur Analyse und Interpretation der Ergebnisse)?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[5]" (click)="rate(num, 5)" [ngStyle]="{'color':getColor(5, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="9" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Wie beurteilen Sie die Erzeugung von Transparenz im Umgang mit Daten? Sowohl intern als auch extern (Kunden)
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[6]" (click)="rate(num, 6)" [ngStyle]="{'color':getColor(6, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="nextPage($event)">Auswerten</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

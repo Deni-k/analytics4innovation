@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Allocation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="2">
+        <div class="Img1">
+          <img src="../assets/Pictures/Picture7.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bereich</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          <b>Fragestellung</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bewertung</b>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Technik / IT
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Wie beurteilen Sie den Zugang zu den internen und externen Datenquellen?  [ 0 ~ viele Datenquellen verfügbar aber bisher kein Zugriff auf diese Daten,  2 ~ einige Datenquellen wurden bisher nicht erschlossen, 4 ~ voller Zugriff auf Daten aus relevanten Datenquellen möglich ]
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[0]" (click)="rate(num, 0)" [ngStyle]="{'color':getColor(0, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Ist eine zentrale Speicherung von Daten (Bündelung der Daten in der IT Infrastruktur) möglich? (Data Lake, o.ä. Struktur) [ 0 ~  nur provisorische Speicherung von Daten, 2 ~ Speicherung teilweise zentral, 4 ~ zentrale Datenspeicherung in einem Data Lake ]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 1)" [(ngModel)]="rat[1]" [ngStyle]="{'color':getColor(1, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Sind technische Voraussetzungen zur Herstellung einer hohen Datenqualität verfügbar? (Beispielsweise Anwendung eines ETL Prozesses?)
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 2)" [(ngModel)]="rat[2]" [ngStyle]="{'color':getColor(2, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Wie bewerten Sie die Eignung der bestehenden IT Infrastruktur in Hinblick auf die Verwendung von Datenanalyseverfahren [ 4 ~ eigenes Analytics Lab, 2 ~ Datenspeicherung + Reportingfunktionen (Business Intelligence Infrastruktur), 0 ~ nur Datenerfassung möglich ]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 3)" [(ngModel)]="rat[3]" [ngStyle]="{'color':getColor(3, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Sind die vorliegenden Datentypen bekannt bzw. sind Informationen über die Strukturiertheit der Daten vorhanden?[ 0 ~ keine Kenntnis bzgl. Datentypen, Strukturiertheit, 2 ~ Datentypen weitestgehend bekannt, 4 ~ vollständige Kenntnis der Datentypen und Strukturiertheit  ]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 4)" [(ngModel)]="rat[4]" [ngStyle]="{'color':getColor(4, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Kompetenzen
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Kann eine Bewertung der Daten hinsichtlich der Eignung zur Analyse erreicht werden?
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 5)" [(ngModel)]="rat[5]" [ngStyle]="{'color':getColor(5, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Kann die Herstellung einer hohen Datenqualität erreicht werden? (Qualitätsdimensionen)
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 6)" [(ngModel)]="rat[6]" [ngStyle]="{'color':getColor(6,num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Sind Kompetenzen in der Verarbeitung von Daten vorhanden (Transformation der Daten in eine für Analysesoftware zugängliche Form)?[ 0 ~ keine Kenntnis der Datenverarbeitung, 2 ~ Datenverarbeitung gelingt in Teilen, 4 ~ alle relevanten Daten können in die richtige Form gebracht werden ]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" (click)="rate(num, 7)" [(ngModel)]="rat[7]" [ngStyle]="{'color':getColor(7, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="nextPage($event)">Nächste Seite</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>KompetenzAnalytics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="2">
+        <div class="Img1">
+          <img src="../assets/Pictures/Picture8.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bereich</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          <b>Fragestellung</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bewertung</b>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Technik / IT
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Sind bereits Verknüpfungen zwischen gespeicherten Daten und einer Analysesoftware geschaffen? (0 ~ Daten wurden bisher nicht mittels Analysesoftware ausgewertet, 2 ~ grundlegende Analyse bspw. mittels EXCEL, 4 ~ Analysesoftware im Einsatz - Datentypen bereits in Form zur weiteren Verwendung in Software)
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[0]" (click)="rate(num, 0)" [ngStyle]="{'color':getColor(0, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Besteht Kenntnis in der Verwendung von Cloudlösungen zur Speicherung und Analyse von Daten?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[1]" (click)="rate(num, 1)" [ngStyle]="{'color':getColor(1, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Kompetenzen
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Sind Kompetenzen in der Auswahl von Analytics Algorithmen bzw. der Auswahl und Verwendung der passenden Software vorhanden?
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[2]" (click)="rate(num, 2)" [ngStyle]="{'color':getColor(2, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Sind Kenntnisse im Umgang mit Analysesoftware (SPSS, KNIME ,oä.) vorhanden?[ 0 ~ noch nie mit Analysesoftware in Kontakt gewesen, 4 ~ Analysesoftware ist im Einsatz ]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[3]" (click)="rate(num, 3)" [ngStyle]="{'color':getColor(3, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="nextPage($event)">Nächste Seite</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

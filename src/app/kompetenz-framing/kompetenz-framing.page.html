@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Framing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size ="2">
+        <div class="Img1">
+          <img src="../assets/Pictures/Picture1.png">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid style="display: block">
+    <ion-row>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bereich</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          <b>Fragestellung</b>
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1">
+        <ion-row class="row1">
+          <b>Bewertung</b>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Technik / IT
+      </ion-col>
+      <ion-col size="7" class="cell1">
+        <ion-row class="row1">
+          Werden servicerelevanten Daten im Unternehmen gesammelt? z.B.: Maschinendaten, Prozessdaten, Kundendaten, Service Protokolle, o.ä.?
+          [ 0 ~ geringer/ kein Zugang zu Daten, 2 ~ Zugang zu verschiedenen Datenquellen, 4 ~ vollständiger Zugang zu Daten mit Relevanz für Service(-entwicklung) ]
+        </ion-row>
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row>
+          <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[0]" (click)="rate(num, 0)" [ngStyle]="{'color':getColor(0, num)}">
+          </ion-icon>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-row class="row1">
+          Kompetenzen
+        </ion-row>
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Können Methoden und tools zur Ermittlung des Kundennutzen und des Kundenmehrwert angewendet werden? (Beispielsweise Anwendung von Business Methoden, wie QFD, Value-Proposition-Canvas, oä.)
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[1]" (click)="rate(num, 1)" [ngStyle]="{'color':getColor(1, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Werden Ansatzpunkte für Business Analytics (BA) gesehen?  (Kenntnisse/Erfahrungen in der Übertragung von betriebswirtschaftlichen Problemstellungen in Analytics Probleme) [ 0 ~ keine Erfahrung bzgl. Ansatzpunkten, 2 ~ einige Ansatzpunkte für BA, 4 ~ genaue Kenntnis wo BA angewendet werden können]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[2]" (click)="rate(num, 2)" [ngStyle]="{'color':getColor(2, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Werden  Potenziale in der Verwendung von Business Analytics gesehen?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[3]" (click)="rate(num, 3)" [ngStyle]="{'color':getColor(3, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Werden alle relevanten personellen Ressourcen bei der Identifikation von betriebswirtschaftlichen Problemstellungen im Service mit einbezogen? Der Input zur Identifikation von Problemstellungen kann aus der gesamten Organisationseinheit kommen. Wichtig ist hier der Einbezug von Erfahrungen aus unterschiedlichen Fachbereichen (Produktion, Entwicklung, Kundenservice, o.ä.)
+        [ 0 ~ nur in Serviceabteilung, 2 ~ Einbeziehung von Service und z.B. Geschäftsführung, 4 ~ Alle Fachbereiche werden in Identifikation von Problemen einbezogen]      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[4]" (click)="rate(num, 4)" [ngStyle]="{'color':getColor(4, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        Erfolgt eine Priorisierung/ Bewertung der Problemstellungen im Service (Operationalisierung)?
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[5]" (click)="rate(num, 5)" [ngStyle]="{'color':getColor(5, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="cell1" style="background: #DAE7F4; display:flex; background-clip: content-box; margin-top: -2vh">
+      </ion-col>
+      <ion-col size="7" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        Ist ein Verständnis bezüglich der verschiedenen Analytics Betrachtungsebenen (Descriptive, Predictive, Prescriptive), sowie Analytics Methoden und deren Verwendung vorhanden?
+        [ 0 ~ keine Analytics Kenntnisse, 2 ~ grundlegendes Verständnis, 4 ~ Analytics Verständnis und Methodenkenntnis]
+      </ion-col>
+      <ion-col size="2" class="cell1" style="background: #EEF3FA; display:flex; background-clip: content-box">
+        <ion-icon name="star" *ngFor="let num of [1,2,3,4,5]" [(ngModel)]="rat[6]" (click)="rate(num, 6)" [ngStyle]="{'color':getColor(6, num)}">
+        </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="nextPage($event)">Nächste Seite</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
